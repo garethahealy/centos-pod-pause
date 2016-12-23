@@ -3,4 +3,4 @@ dist: trusty
 services:
   - docker
 script:
-  - docker build --tag garethahealy/centos-node-pause .
+  - docker build --tag garethahealy/centos-pod-pause .
