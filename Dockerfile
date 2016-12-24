@@ -6,6 +6,8 @@ LABEL Name="centos-pod-pause" \
     Version="1.0.0" \
     License="Apache License, Version 2.0"
 
+USER root
+
 ADD pause.c /pause-code/pause.c
 
 # Compiler tools
