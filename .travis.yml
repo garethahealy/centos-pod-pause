@@ -11,5 +11,6 @@ install:
   - npm install -g dockerfile_lint
 before_script:
   - dockerfile_lint  -f Dockerfile
+  - docker pull centos:7
 script:
   - docker build --tag garethahealy/centos-pod-pause .
