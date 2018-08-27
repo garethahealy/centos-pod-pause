@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/garethahealy/centos-pod-pause.svg?branch=master)](https://travis-ci.org/garethahealy/centos-pod-pause)
-[![Docker Pulls](https://img.shields.io/docker/pulls/garethahealy/centos-pod-pause.svg)]()
+[![Docker Pulls](https://img.shields.io/docker/pulls/garethahealy/centos-pod-pause.svg)](https://hub.docker.com/r/garethahealy/centos-pod-pause/)
 [![License](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)]()
 
 # centos-pod-pause
