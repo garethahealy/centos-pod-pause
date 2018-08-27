@@ -1,16 +1,14 @@
 sudo: required
 dist: trusty
-addons:
-  apt:
-    packages:
-    - nodejs
-    - npm
+language: node_js
+node_js:
+- "node"
 services:
   - docker
 install:
-  - npm install -g dockerfile_lint
+- npm install -g dockerfile_lint
 before_script:
-  - dockerfile_lint  -f Dockerfile
-  - docker pull centos:7
+- dockerfile_lint  -f Dockerfile
+- docker pull centos:7
 script:
-  - docker build --tag garethahealy/centos-pod-pause .
+- docker build --tag garethahealy/centos-pod-pause .
