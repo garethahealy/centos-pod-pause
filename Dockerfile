@@ -1,5 +1,4 @@
 FROM centos:7
-MAINTAINER garethahealy (https://github.com/garethahealy/)
 
 LABEL Name="centos-pod-pause" \
     Vendor="com.garethahealy" \
@@ -11,9 +10,12 @@ USER root
 
 ADD pause.c /pause-code/pause.c
 
-# Compiler tools
-RUN yum install -y gcc kernel-devel make && \
-    yum clean all
+# Install packages without docs. Variable is used to cause yum to fail if missing
+RUN INSTALL_PKGS="gcc kernel-devel make" \
+    && yum install -y $INSTALL_PKGS --setopt tsflags=nodocs \
+    && rpm -V $INSTALL_PKGS \
+    && rm -rf /var/cache/yum \
+    && yum -y clean all
 
 # Compile pause
 RUN cd /pause-code && \
